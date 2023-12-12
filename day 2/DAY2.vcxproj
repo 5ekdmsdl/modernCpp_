@@ -162,6 +162,8 @@
     <ClCompile Include="3_초기화10-1.cpp" />
     <ClCompile Include="3_초기화12.cpp" />
     <ClCompile Include="3_초기화5-1.cpp" />
+    <ClCompile Include="5_rvalue4.cpp" />
+    <ClCompile Include="5_rvalue3.cpp" />
     <ClCompile Include="8_완벽한전달0.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
