@@ -9,10 +9,10 @@ struct Point
 
 int main()
 {
-	int n1{ 0 };		// direct init
-	int n2 = { 0 };		// copy init
-	int n3;				// default init -> 지역변수라면 쓰레기값
-	int n4{};			// value init - {} 안에 값이 없다.
+	int n1{ 0 };		// direct reset
+	int n2 = { 0 };		// copy reset
+	int n3;				// default reset -> 지역변수라면 쓰레기값
+	int n4{};			// value reset - {} 안에 값이 없다.
 						// => primitive 타입은 0으로 초기화
 						// => user define type은 디폴트 생성자
 

@@ -13,7 +13,7 @@ struct Point
 	//Point()             : x(0), y(0) {}	// 1
 	//Point(int a, int b) : x(a), y(b) {}	// 2
 
-	//virtual void foo() {} // 가상 함수 있으면 aggregate init X
+	//virtual void foo() {} // 가상 함수 있으면 aggregate reset X
 
 	//Point() {}				// 생성자 있으면 agg type X
 
