@@ -1,12 +1,11 @@
 
 // forwarding reference 란 ?
-// => "T&&" 템플릿
+// => 인자가 "T&&" 템플릿
 
-template<typename T> void chronomety(T&& a)
-{
+template<typename T> void chronomety(T&& a) {
+	
 }
 
-int main()
-{
+int main() {
 
 }
