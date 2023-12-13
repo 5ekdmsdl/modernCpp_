@@ -9,6 +9,7 @@
 
 void foo(int a) {}
 void goo(int& a) { a = 100; }
+void hoo(int&& a) {}
 
 template<typename F>
 void chronometry(F f, int& arg)		// lvalue (n)
@@ -18,6 +19,9 @@ void chronometry(F f, int& arg)		// lvalue (n)
 template<typename F>
 void chronometry(F f, int&& arg)	// rvalue (10)
 {
+	// int&& arg = 10¿¡¼­
+	// 10 : rvalue
+	// arg : lvalue	<== ÇÙ½É !
 	f(arg);
 }
 
@@ -25,9 +29,8 @@ int main()
 {
 	int n = 10;
 
-	chronometry(foo, 10);
-
-	chronometry(goo, n);
+	hoo(10);
+	chronometry(hoo, 10);
 
 	std::cout << n << std::endl;
 }
