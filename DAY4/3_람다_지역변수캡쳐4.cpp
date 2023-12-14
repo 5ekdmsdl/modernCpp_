@@ -16,8 +16,10 @@ int main()
 	v.emplace_back(20);
 	v.emplace_back(15);
 
+	int k = 15;
 	// 나이가 15살인 사람을 찾고 싶다. ?
-	auto ret = std::find(v.begin(), v.end(), ? );
+	auto ret = std::find(v.begin(), v.end(),
+		[k](const People& p) { return p.age == k;  });
 }
 
 
