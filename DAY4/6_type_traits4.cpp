@@ -6,14 +6,27 @@
 // 1. 타입질의 : is_xxx<T>::value
 // 2. 변형타입얻기 : xxx<T>::type
 
+// 변형 타입을 얻은 traits 만들기
 
+template <typename T> struct remove_pointer {
+	using type = T;
+
+};
+
+template <typename T> struct remove_pointer<T*> {
+	using type = T;
+};
 
 
 int main()
 {
-	remove_pointer<int*>::type n2; 
+	remove_pointer<int*>::type n2;  // int n2
 }
 
-template<typename T> void foo(T a)
-{
+template<typename T> void foo(T a) {
+	// 주의 : 변형 타입을 얻는 traits는 "타입"을 얻게 됨 (값 X)
+	//		  템플릿 의존 이름 사용하면 "typename" 필요
+
+	//remove_pointer<T>::type n1;			// error
+	typename remove_pointer<T>::type n1;	// ok
 }
