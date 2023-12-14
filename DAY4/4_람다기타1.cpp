@@ -5,8 +5,12 @@ class Test
 public:
 	void foo()
 	{
-		// 멤버 데이타 캡쳐 ?
-		auto f = [](int a) { return a + data; };
+		// 람다 표현식에 멤버 데이타 접근하고 싶다
+		//auto f = [](int a) { return a + data; };			// error
+		//auto f = [data](int a) { return a + data; };		// error
+
+		auto f = [this](int a) { return a + this->data; };		// error
+
 
 	}
 };
