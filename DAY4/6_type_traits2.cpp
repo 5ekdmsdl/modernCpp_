@@ -11,12 +11,13 @@ template<typename T>	// primary template
 struct is_pointer
 {
 	enum { value = false };	// 왜 enum을 사용하나요?
+	
 };
 
 template<typename T>
 struct is_pointer<T*>	// 부분 특수화 (포인터인 경우에만!)
 {
-	enum { value = true };
+	enum { value = true };	// 
 };
 
 template<typename T> void foo(const T& a)
