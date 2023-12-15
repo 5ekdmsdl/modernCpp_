@@ -10,6 +10,8 @@ private:
 	std::string name;
 	std::string address;
 public:
+	// move 를 지원하기 위한 setter 를 만들때 T&& 를 사용하는 함수.
+	// => 아래 처럼 만들면 "p.set(10, 20)" 이 에러가 아닙니다.
 	template<typename T1, typename T2>
 	void set(T1&& a1, T2&& a2)
 	{
@@ -20,12 +22,7 @@ public:
 
 int main()
 {
-	std::string name = "kim";
-	std::string addr = "seoul";
-
 	People p;
-	p.set(name, addr);
-	p.set(std::move(name), addr);
-	p.set(name, std::move(addr));
-	p.set(std::move(name), std::move(addr));
+	p.set(10, 20);
+
 }
